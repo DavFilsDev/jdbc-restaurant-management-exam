@@ -1,13 +1,13 @@
 package com.restaurantManagement;
 
-public class ingredient {
+public class Ingredient {
     private int id;
     private String name;
     private double price;
     private IngredientCategory category;
     private Integer dishId;
 
-    public ingredient(int id, String name, double price, IngredientCategory category, Integer dishId) {
+    public Ingredient(int id, String name, double price, IngredientCategory category, Integer dishId) {
         this.id = id;
         this.name = name;
         this.price = price;
