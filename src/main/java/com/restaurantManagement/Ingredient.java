@@ -4,15 +4,15 @@ public class Ingredient {
     private int id;
     private String name;
     private double price;
-    private IngredientCategory category;
-    private Integer dishId;
+    private CategoryEnum category;
+    private Dish dish;
 
-    public Ingredient(int id, String name, double price, IngredientCategory category, Integer dishId) {
+    public Ingredient(int id, String name, double price, CategoryEnum category, Dish dish) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.category = category;
-        this.dishId = dishId;
+        this.dish = dish;
     }
 
     public int getId() {
@@ -39,20 +39,20 @@ public class Ingredient {
         this.price = price;
     }
 
-    public IngredientCategory getCategory() {
+    public CategoryEnum getCategory() {
         return category;
     }
 
-    public void setCategory(IngredientCategory category) {
+    public void setCategory(CategoryEnum category) {
         this.category = category;
     }
 
-    public Integer getDishId() {
-        return dishId;
+    public Dish getDish() {
+        return dish;
     }
 
-    public void setDishId(Integer dishId) {
-        this.dishId = dishId;
+    public void setDishId(Dish dish) {
+        this.dish = dish;
     }
 
     // getPrice() method needed for Dish.getDishPrice() calculation

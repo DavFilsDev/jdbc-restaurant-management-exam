@@ -13,15 +13,11 @@ public class Dish {
         this.id = id;
         this.name = name;
         this.dishType = dishType;
-        this.ingredients = ingredients != null ? ingredients : new ArrayList<>();
+        this.ingredients = ingredients;
     }
 
     public Dish(int id, String name, DishTypeEnum dishType) {
         this(id, name, dishType, new ArrayList<>());
-    }
-
-    public Dish() {
-        this.ingredients = new ArrayList<>();
     }
 
     public int getId() {

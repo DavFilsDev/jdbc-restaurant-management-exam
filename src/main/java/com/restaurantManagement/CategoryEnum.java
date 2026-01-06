@@ -1,6 +1,6 @@
 package com.restaurantManagement;
 
-public enum IngredientCategory {
+public enum CategoryEnum {
     VEGETABLE,
     ANIMAL,
     MARINE,
