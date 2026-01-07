@@ -46,7 +46,7 @@ public class Main {
             System.out.println("   Tentative de calcul de marge...");
             Double margin = dish4.getGrossMargin();
             System.out.println("   Marge brute: " + margin + " FCFA");
-            System.out.println("   ⚠️ ERREUR: L'exception aurait dû être levée!");
+            System.out.println("   ERREUR: L'exception aurait dû être levée!");
             System.out.println();
         } catch (RuntimeException e) {
             System.out.println("   ✓ Exception levée comme attendu: " + e.getMessage());
@@ -60,7 +60,7 @@ public class Main {
             System.out.println("   Prix de vente: " + (dish3.getPrice() != null ? dish3.getPrice() + " FCFA" : "Non défini"));
 
             Double margin = dish3.getGrossMargin();
-            System.out.println("   ⚠️ ERREUR: L'exception aurait dû être levée!");
+            System.out.println("   ERREUR: L'exception aurait dû être levée!");
             System.out.println();
         } catch (RuntimeException e) {
             System.out.println("   ✓ Exception levée comme attendu: " + e.getMessage());
