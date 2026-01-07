@@ -1,11 +1,13 @@
 package com.restaurantManagement;
 
+import java.util.Objects;
+
 public class Ingredient {
-    private int id;
-    private String name;
-    private double price;
-    private CategoryEnum category;
-    private Dish dish;
+    private final int id;
+    private final String name;
+    private final double price;
+    private final CategoryEnum category;
+    private final Dish dish;
 
     public Ingredient(int id, String name, double price, CategoryEnum category, Dish dish) {
         this.id = id;
@@ -15,45 +17,38 @@ public class Ingredient {
         this.dish = dish;
     }
 
-    public int getId() {
-        return id;
+    public int getId() { return id; }
+    public String getName() { return name; }
+    public double getPrice() { return price; }
+    public CategoryEnum getCategory() { return category; }
+    public Dish getDish() { return dish; }
+    public String getDishName() { return dish == null ? null : dish.getName(); }
+
+    @Override
+    public String toString() {
+        return "Ingredient{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", category=" + category +
+                ", dish=" + (dish == null ? null : dish.getName()) +
+                '}';
     }
 
-    public void setId(int id) {
-        this.id = id;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Ingredient that)) return false;
+        return id == that.id &&
+                Double.compare(that.price, price) == 0 &&
+                Objects.equals(name, that.name) &&
+                category == that.category &&
+                Objects.equals(dish == null ? null : dish.getId(),
+                        that.dish == null ? null : that.dish.getId());
     }
 
-    public String getName() {
-        return name;
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, price, category, dish == null ? null : dish.getId());
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public CategoryEnum getCategory() {
-        return category;
-    }
-
-    public void setCategory(CategoryEnum category) {
-        this.category = category;
-    }
-
-    public Dish getDish() {
-        return dish;
-    }
-
-    public void setDishId(Dish dish) {
-        this.dish = dish;
-    }
-
-    // getPrice() method needed for Dish.getDishPrice() calculation
 }
